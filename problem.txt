@@ -1,0 +1,100 @@
+Hello World with user input
+Even/Odd checker
+Largest of three numbers
+Prime number checker
+Palindrome number check
+Factorial calculator
+Fibonacci series
+Reverse a string
+Count vowels in string
+Sum of digits
+Armstrong number checker
+Leap year checker
+Temperature converter
+Simple calculator
+Multiplication table generator
+Swap two numbers
+Find GCD and LCM
+Number guessing game
+Password generator
+Random quote generator
+Word counter
+Character frequency counter
+String compression
+Anagram checker
+Longest word finder
+Remove duplicates from string
+Reverse words in sentence
+Caesar cipher encryption
+Email validator
+URL extractor
+Text formatter
+Username generator
+CamelCase converter
+Palindrome sentence checker
+Sentence statistics analyzer
+Find max/min in list
+Remove duplicates from list
+Second largest element
+Rotate array
+Merge sorted arrays
+Find missing number
+Bubble sort implementation
+Selection sort implementation
+Binary search
+Linear search
+List intersection finder
+Matrix addition
+Matrix multiplication
+Transpose matrix
+Inventory manager using lists
+Notes app using txt file
+CSV reader
+CSV writer
+Expense tracker
+Contact manager
+Log file analyzer
+Student record system
+Todo app with file storage
+Markdown generator
+Text backup tool
+File organizer
+Duplicate file finder
+JSON reader/writer
+File encryption tool
+Directory tree generator
+Bank account system
+Library management
+Student management system
+Employee payroll system
+Hotel booking system
+Shopping cart system
+Vehicle management system
+Quiz application
+ATM simulator
+E-commerce product manager
+QR code generator
+PDF merger
+Screenshot tool
+Clipboard manager
+Weather fetcher API
+Currency converter
+Internet speed checker
+URL shortener client
+Email sender
+Reminder app
+System info fetcher
+Battery monitor
+WiFi password viewer
+Stopwatch app
+Timer app
+Tic Tac Toe
+Rock Paper Scissors
+Snake game
+Quiz game
+Calculator GUI
+Pomodoro timer
+Expense tracker GUI
+Chat application basic
+Flashcard app
+Habit tracker
