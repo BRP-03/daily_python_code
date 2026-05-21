@@ -3,9 +3,7 @@ import json
 from datetime import date
 from google import genai
 
-API_KEY = os.environ["GEMINI_API_KEY"]
-
-client=genai.Client(api_key="AIzaSyDGbGLKUL01PiNQjezOYWnrwvzjH3I34Rg")
+client=genai.Client(api_key=os.environ["AIzaSyBfACGMPG3theqoJyIW7T42u_kQpBn93pk"])
 STATE="state.json"
 
 with open(
