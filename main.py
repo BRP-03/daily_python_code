@@ -1,72 +1,178 @@
-import os
 import json
-from datetime import date
-from google import genai
+import os
 
-client=genai.Client(api_key=os.environ["AIzaSyBfACGMPG3theqoJyIW7T42u_kQpBn93pk"])
-STATE="state.json"
+STATE = "state.json"
+
+programs = [
+
+('''
+
+num = int(
+    input(
+        "Enter number: "
+    )
+)
+
+if num % 2 == 0:
+
+    print(
+        "Even"
+    )
+
+else:
+
+    print(
+        "Odd"
+    )
+
+''',"Even Odd Checker"),
+
+('''
+
+text = input()
+
+if text == text[::-1]:
+
+    print(
+        "Palindrome"
+    )
+
+else:
+
+    print(
+        "Not palindrome"
+    )
+
+''',"Palindrome Checker"),
+
+('''
+
+n=int(input())
+
+fact=1
+
+for i in range(
+    1,
+    n+1
+):
+
+    fact*=i
+
+print(
+    fact
+)
+
+''',"Factorial"),
+
+('''
+
+a=0
+b=1
+
+for i in range(
+    10
+):
+
+    print(
+        a
+    )
+
+    a,b=b,a+b
+
+''',"Fibonacci"),
+
+('''
+
+text=input()
+
+print(
+    text[::-1]
+)
+
+''',"Reverse String"),
+
+('''
+
+a=int(input())
+
+b=int(input())
+
+print(
+    a+b
+)
+
+''',"Calculator"),
+
+('''
+
+for i in range(
+    1,
+    11
+):
+
+    print(
+        i*i
+    )
+
+''',"Squares"),
+
+('''
+
+nums=[1,5,3,7]
+
+print(
+    max(nums)
+)
+
+''',"Max Finder"),
+
+('''
+
+for i in range(
+    1,
+    6
+):
+
+    print(
+        "*"*i
+    )
+
+''',"Pattern"),
+
+('''
+
+password="abc123"
+
+user=input()
+
+print(
+    user==password
+)
+
+''',"Password Check")
+
+]
 
 with open(
     STATE,
     "r"
 ) as f:
 
-    state=json.load(f)
+    state=json.load(
+        f
+    )
 
 current=state[
     "current_problem"
 ]
 
-with open(
-    "problems.txt",
-    "r",
-    encoding="utf8"
-) as f:
+code,title=programs[
+    current % len(
+        programs
+    )
+]
 
-    problems=f.readlines()
-
-problem=problems[
-    current
-].strip()
-
-prompt=f"""
-
-Create complete python project.
-
-Problem:
-
-{problem}
-
-Requirements:
-
-1 Complete code
-
-2 Add comments
-
-3 Beginner friendly
-
-Only output code.
-
-"""
-
-response=client.models.generate_content(
-    model="gemini-2.5-flash",
-    contents=prompt
-)
-
-code=response.text
-
-code=code.replace(
-    "```python",
-    ""
-)
-
-code=code.replace(
-    "```",
-    ""
-)
-
-folder=f"generated_projects/Program_{current+1}"
+folder=f"generated_projects/program{current+1}"
 
 os.makedirs(
     folder,
@@ -75,31 +181,21 @@ os.makedirs(
 
 with open(
     f"{folder}/main.py",
-    "w",
-    encoding="utf8"
+    "w"
 ) as f:
 
-    f.write(code)
-
-readme=f"""
-
-# Day {current+1}
-
-Problem:
-
-{problem}
-
-Generated:
-{date.today()}
-
-"""
+    f.write(
+        code
+    )
 
 with open(
     f"{folder}/README.md",
     "w"
 ) as f:
 
-    f.write(readme)
+    f.write(
+        f"# {title}"
+    )
 
 state[
     "current_problem"
