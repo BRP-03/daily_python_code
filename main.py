@@ -66,7 +66,7 @@ code=code.replace(
     ""
 )
 
-folder=f"generated_projects/Day_{current+1}"
+folder=f"generated_projects/Program_{current+1}"
 
 os.makedirs(
     folder,
