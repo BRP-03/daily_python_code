@@ -1,4 +1,4 @@
-name: Daily AI Generator
+name: Daily Program Generator
 
 on:
 
@@ -20,34 +20,21 @@ jobs:
     steps:
 
       - name: Checkout
-
         uses: actions/checkout@v4
 
-      - name: Python
-
+      - name: Setup Python
         uses: actions/setup-python@v5
 
         with:
-
           python-version: "3.11"
 
-      - name: Install
-
-        run: |
-
-          pip install -r requirements.txt
-
-      - name: Generate
-
-        env:
-
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      - name: Generate Program
 
         run: |
 
           python main.py
 
-      - name: Commit
+      - name: Commit Changes
 
         run: |
 
@@ -57,6 +44,6 @@ jobs:
 
           git add .
 
-          git commit -m "Daily AI project" || exit 0
+          git commit -m "Daily program update" || exit 0
 
           git push
