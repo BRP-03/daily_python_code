@@ -1,0 +1,8 @@
+
+
+nums=[1,5,3,7]
+
+print(
+    max(nums)
+)
+
